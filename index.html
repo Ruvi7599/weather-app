@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="icon" href="https://img.icons8.com/fluency/48/cloud.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="is-mobile-aware">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="app">
+    <header class="header" role="banner">
+      <h1 class="brand">
+        <span class="brand-icon">☁️</span>
+        Weather App
+      </h1>
+      <p class="tagline">Type a city and get the current weather</p>
+    </header>
+
+    <main role="main">
+      <form id="searchForm" class="search" autocomplete="off">
+        <div class="search-input-wrap">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Enter city (e.g., Colombo)"
+            aria-label="City name"
+            required
+          />
+          <ul id="suggestions" class="suggestions hidden" role="listbox" aria-label="City suggestions"></ul>
+        </div>
+
+        <div class="unit-toggle" role="group" aria-label="Temperature unit">
+          <button type="button" class="unit-btn active" data-unit="metric">°C</button>
+          <button type="button" class="unit-btn" data-unit="imperial">°F</button>
+        </div>
+
+        <button id="submitBtn" type="submit" class="btn pulse">Get Weather</button>
+      </form>
+
+      <div id="loader" class="loader hidden" aria-live="polite" aria-busy="true">
+        <span class="spinner"></span>
+        Fetching weather…
+      </div>
+      <div id="error" class="error hidden" role="alert"></div>
+
+      <section id="result" class="card hidden" aria-live="polite">
+        <div class="row">
+          <div class="left">
+            <h2 id="place" class="fade"></h2>
+            <div class="temp-wrap">
+              <span id="temp" class="temp count-up">—</span>
+              <span class="unit" id="unitLabel">°C</span>
+            </div>
+            <p id="desc" class="desc fade">—</p>
+          </div>
+          <div class="right">
+            <img id="icon" class="icon float" src="" alt="" />
+          </div>
+        </div>
+        <div class="meta">
+          <div class="meta-item"><span>Feels like:</span> <strong id="feelsLike">—</strong></div>
+          <div class="meta-item"><span>Humidity:</span> <strong id="humidity">—</strong>%</div>
+          <div class="meta-item"><span>Wind:</span> <strong id="wind">—</strong> <span id="windUnit">m/s</span></div>
+          <div class="meta-item"><span>Pressure:</span> <strong id="pressure">—</strong> hPa</div>
+          <div class="meta-item"><span>Visibility:</span> <strong id="visibility">—</strong> km</div>
+          <div class="meta-item"><span>Sunrise:</span> <strong id="sunrise">—</strong></div>
+          <div class="meta-item"><span>Sunset:</span> <strong id="sunset">—</strong></div>
+        </div>
+      </section>
+
+      <section id="forecast" class="card hidden">
+        <h3 class="section-title">Next 5 Days</h3>
+        <div id="forecastStrip" class="forecast-strip"></div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div id="creditBadge" class="credit-badge">
+        <a href="https://openweathermap.org/" target="_blank" rel="noreferrer" class="credit-link" aria-label="OpenWeatherMap">
+          <svg viewBox="0 0 64 64" class="credit-icon" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#6ea8ff"/>
+                <stop offset="1" stop-color="#9fd0ff"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="24" r="12" fill="url(#g1)"/>
+            <ellipse cx="40" cy="34" rx="18" ry="12" fill="#cfe5ff"/>
+            <circle cx="46" cy="22" r="8" fill="#a7caff"/>
+          </svg>
+          <span>Data by OpenWeatherMap</span>
+        </a>
+        <button id="hideCredit" class="close-x" title="Hide credit">×</button>
+      </div>
+      <button id="showCredit" class="show-credit hidden" title="Show credit again">Show credit</button>
+      <p class="copyright">© 2025 Created by <strong>Ruvinda Manoshitha</strong></p>
+      <a href="https://www.linkedin.com/in/ruvindamanoshitha" target="_blank" rel="noreferrer" class="linkedin-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="linkedin-icon" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 
+          16 1.146v13.708c0 .633-.526 1.146-1.175 
+          1.146H1.175C.526 16 0 15.487 0 
+          14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 
+          0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 
+          0-1.358.54-1.358 1.248 0 .694.52 1.248 1.327 
+          1.248h.015zm4.908 8.212V9.359c0-.216.016-.432.08-.586.175-.431.574-.878 
+          1.244-.878.877 0 1.228.662 1.228 1.634v3.865h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 
+          0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 
+          7.225h2.4z"/>
+        </svg>
+        <span>Visit Linkedin Profile</span>
+      </a>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
