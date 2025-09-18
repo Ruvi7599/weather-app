@@ -4,10 +4,7 @@
 - **HTML**
 - **CSS**
 - **JavaScript**
-
-## Project Difficulty Level
-**Hard**
-
+  
 ## Project Description
 Objective: Build a responsive web-based weather application where users can enter a city and instantly see the current weather conditions.  
 The app displays:
