@@ -1,5 +1,8 @@
-# weather-app
+# Weather Application
 🌦️ A responsive Weather App built with HTML, CSS, and JavaScript using OpenWeather API.
+
+[👉 **Live Preview on GitHub Pages**](https://ruvi7599.github.io/weather-app/)
+
 ## Technologies
 - **HTML**
 - **CSS**
