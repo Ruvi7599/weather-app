@@ -43,3 +43,34 @@ The app displays:
 2. Open `script.js` and replace the placeholder key:
    ```js
    const API_KEY = "YOUR_OPENWEATHERMAP_KEY";
+## 📸 UI Previews
+
+Here are some screenshots of the Weather App:
+
+### 🔹 Home Screen
+![Home Screen](ui/Web-View.png)
+
+### 🔹 Search
+![Search](ui/Search.png)
+
+### 🔹 Results
+![Results](ui/Results.png)
+
+### 🔹 Suggestions
+![Suggestions](ui/Suggestions.png)
+
+### 🔹 Mobile View
+![Mobview](ui/MobView_ui.png)
+
+### 🔹 Mobile View Search
+![Mobviews](ui/Mobile_view_response.png)
+
+### 🔹 Mobile View Results
+![Mobview](ui/Results_M.png)
+![Mobview](ui/slider.png)
+
+### 🔹Error Handling
+![Mobviews](ui/Error_handling.png)
+
+
+
